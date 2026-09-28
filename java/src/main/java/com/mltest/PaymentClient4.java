@@ -7,9 +7,9 @@ import org.springframework.web.client.RestTemplate;
 public class PaymentClient4 {
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public String charge4(String cardNumber, String cvv) {
+    public String charge4(String creditCardNumber, String cvv) {
         Map<String, String> body = new HashMap<>();
-        body.put("card_number", cardNumber);
+        body.put("credit_card_number", creditCardNumber);
         body.put("cvv", cvv);
         return restTemplate.postForObject("https://api.stripe.com/v1/charges", body, String.class);
     }
